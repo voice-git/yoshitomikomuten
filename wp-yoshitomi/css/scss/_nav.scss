@@ -1,0 +1,504 @@
+/*nav
+---------------------------------------------------------------------------------------*/
+.gnav {
+
+    @include MQ(min-md) {
+      margin-top: 45px;
+        float: right;
+    }
+
+    ul {
+
+        li {
+            @include MQ(min-md) {
+                float: left;
+                margin-left: 20px;
+            }
+
+            a {
+                display: block;
+                color: $color-base;
+                font-size: 1.4rem;
+                border-bottom: 1px solid #fff;
+                transition-property: color;
+                transition-duration: 0.5s;
+                @include MQ(md) {
+                    font-size: 1.6rem;
+                    padding: 15px 0;
+                    color: #fff;
+                    text-align: center;
+                    border-bottom: 1px solid #a7c19b;
+                }
+
+                &:hover {
+                  @include MQ(min-md) {
+                    color: $color-border;
+                    opacity: 1;
+                    border-bottom: 1px solid $color-border;
+                  }
+
+                    @include MQ(md) {
+                        opacity: 0.7;
+                    }
+                }
+            }
+
+            &.active {
+                a {
+                    color: $color-border;
+                    border-bottom: 1px solid $color-border;
+                }
+            }
+        }
+    }
+}
+
+.nav_home{
+    @include MQ(min-md) {
+      display: none;
+    }
+}
+.page-id-71{
+  .nav_message a{
+    @include MQ(min-md) {
+      color: $color-border;
+      border-bottom: 1px solid $color-border;
+    }
+  }
+}
+.page-id-73{
+  .nav_owner a{
+    @include MQ(min-md) {
+      color: $color-border;
+      border-bottom: 1px solid $color-border;
+    }
+  }
+}
+.page-id-75{
+  .nav_architect a{
+    @include MQ(min-md) {
+      color: $color-border;
+      border-bottom: 1px solid $color-border;
+    }
+  }
+}
+.blog,
+.archive,
+.category,
+.single{
+  .nav_works a{
+    @include MQ(min-md) {
+      color: $color-border;
+      border-bottom: 1px solid $color-border;
+    }
+  }
+}
+.page-id-77{
+  .nav_about a{
+    @include MQ(min-md) {
+      color: $color-border;
+      border-bottom: 1px solid $color-border;
+    }
+  }
+}
+
+.drawer-hamburger {
+    @include MQ(min-md) {
+        display: none;
+    }
+}
+/*!
+ * jquery-drawer v3.2.2
+ * Flexible drawer menu using jQuery, iScroll and CSS.
+ * http://git.blivesta.com/drawer
+ * License : MIT
+ * Author : blivesta <design@blivesta.com> (http://blivesta.com/)
+ */
+/*!------------------------------------*\
+    drawer
+\*!------------------------------------*/
+@include MQ(md) {
+    .drawer-open {
+        overflow: hidden !important;
+    }
+
+    .drawer-nav {
+        position: fixed;
+        z-index: 101;
+        top: 0;
+        overflow: hidden;
+        width: 16.25rem;
+        height: 100%;
+        color: $color-bg;
+        background-color: $color-border;
+    }
+
+    .drawer-brand {
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 3.75rem;
+        display: block;
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+        text-decoration: none;
+        color: #222;
+    }
+
+    .drawer-menu {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .drawer-menu-item {
+        font-size: 1rem;
+        display: block;
+        padding: 0.75rem;
+        text-decoration: none;
+        color: #222;
+
+        &:hover {
+            text-decoration: underline;
+            color: #555;
+            background-color: transparent;
+        }
+    }
+    /*! overlay */
+    .drawer-overlay {
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        display: none;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+
+    .drawer-open .drawer-overlay {
+        display: block;
+    }
+    /*!------------------------------------*\
+        Top
+    \*!------------------------------------*/
+    .drawer--top {
+        .drawer-nav {
+            top: -100%;
+            left: 0;
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            -webkit-transition: top 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: top 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        &.drawer-open .drawer-nav {
+            top: 0;
+        }
+
+        &.drawer-open .drawer-hamburger,
+        .drawer-hamburger {
+            right: 0;
+        }
+    }
+    /*!------------------------------------*\
+    Hamburger
+\*!------------------------------------*/
+    .drawer-hamburger {
+        position: fixed;
+        z-index: 104;
+        top: 0;
+        display: block;
+        box-sizing: content-box;
+        width: 2.5rem;
+        padding: 0 16px;
+        -webkit-transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+        border: 0;
+        outline: 0;
+        margin: 0;
+        height: 60px;
+        background: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .drawer-hamburger-icon {
+        position: relative;
+        display: block;
+        margin-top: 0;
+        width: 100%;
+        height: 2px;
+        -webkit-transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+        background-color: $color-border;
+
+        &:after,
+        &:before {
+            width: 100%;
+            height: 2px;
+            -webkit-transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+            background-color: $color-border;
+        }
+
+        &:before {
+            position: absolute;
+            top: -10px;
+            left: 0;
+            content: ' ';
+        }
+
+        &:after {
+            position: absolute;
+            top: -10px;
+            left: 0;
+            content: ' ';
+            top: 10px;
+        }
+    }
+
+    .drawer-open .drawer-hamburger-icon {
+        background-color: transparent;
+
+        &:after,
+        &:before {
+            top: 0;
+            background-color: #fff;
+        }
+
+        &:before {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+    }
+}
+/*!------------------------------------*\
+    accessibility
+\*!------------------------------------*/
+/*!
+ * Only display content to screen readers
+ * See: http://a11yproject.com/posts/how-to-hide-content
+ */
+.sr-only {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+/*!
+ * Use in conjunction with .sr-only to only display content when it's focused.
+ * Useful for "Skip to main content" links; see http://www.w3.org/TR/2013/NOTE-WCAG20-TECHS-20130905/G1
+ * Credit: HTML5 Boilerplate
+ */
+.sr-only-focusable {
+    &:active,
+    &:focus {
+        position: static;
+        overflow: visible;
+        clip: auto;
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+}
+/*!------------------------------------*\
+    Sidebar
+\*!------------------------------------*/
+.drawer--sidebar {
+    background-color: #fff;
+
+    .drawer-contents {
+        background-color: #fff;
+    }
+}
+@media (min-width: 64em) {
+    .drawer--sidebar {
+        .drawer-hamburger {
+            display: none;
+            visibility: hidden;
+        }
+
+        .drawer-nav {
+            display: block;
+            -webkit-transform: none;
+            transform: none;
+            position: fixed;
+            width: 12.5rem;
+            height: 100%;
+        }
+
+        &.drawer--right {
+            .drawer-nav {
+                right: 0;
+                border-left: 1px solid #ddd;
+            }
+
+            .drawer-contents {
+                margin-right: 12.5rem;
+            }
+        }
+
+        .drawer-container {
+            max-width: 48rem;
+        }
+    }
+}
+@media (min-width: 75em) {
+    .drawer--sidebar {
+        .drawer-nav {
+            width: 16.25rem;
+        }
+
+        &.drawer--right .drawer-contents {
+            margin-right: 16.25rem;
+        }
+
+        .drawer-container {
+            max-width: 60rem;
+        }
+    }
+    /*! container */
+}
+/*!------------------------------------*\
+    Navbar
+\*!------------------------------------*/
+.drawer--navbarTopGutter {
+    padding-top: 3.75rem;
+}
+
+.drawer-navbar {
+    .drawer-navbar-header {
+        border-bottom: 1px solid #ddd;
+        background-color: #fff;
+    }
+    z-index: 102;
+    top: 0;
+    width: 100%;
+}
+/*! .drawer-navbar modifier */
+.drawer-navbar--fixed {
+    position: fixed;
+}
+
+.drawer-navbar-header {
+    position: relative;
+    z-index: 102;
+    box-sizing: border-box;
+    width: 100%;
+    height: 3.75rem;
+    padding: 0 0.75rem;
+    text-align: center;
+}
+
+.drawer-navbar {
+    .drawer-brand {
+        line-height: 3.75rem;
+        display: inline-block;
+        padding-top: 0;
+        padding-bottom: 0;
+        text-decoration: none;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .drawer-nav {
+        padding-top: 3.75rem;
+    }
+
+    .drawer-menu {
+        padding-bottom: 7.5rem;
+    }
+}
+/*!------------------------------------*\
+    Dropdown
+\*!------------------------------------*/
+.drawer-dropdown-menu {
+    display: none;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+
+    > li {
+        width: 100%;
+        list-style: none;
+    }
+}
+
+.drawer-dropdown-menu-item {
+    line-height: 3.75rem;
+    display: block;
+    padding: 0 0.75rem 0 1.5rem;
+    text-decoration: none;
+    color: #222;
+
+    &:hover {
+        text-decoration: underline;
+        color: #555;
+        background-color: transparent;
+    }
+}
+/*! open */
+.drawer-dropdown {
+    &.open > .drawer-dropdown-menu {
+        display: block;
+    }
+
+    .drawer-caret {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 4px;
+        -webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
+        transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+        transition: transform 0.2s ease, opacity 0.2s ease, -webkit-transform 0.2s ease;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        vertical-align: middle;
+        border-top: 4px solid;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+    }
+
+    &.open .drawer-caret {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+}
+/*! drawer-caret */
+/*! open */
+/*!------------------------------------*\
+    Container
+\*!------------------------------------*/
+.drawer-container {
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 64em) {
+    .drawer-container {
+        max-width: 60rem;
+    }
+}
+@media (min-width: 75em) {
+    .drawer-container {
+        max-width: 70rem;
+    }
+}

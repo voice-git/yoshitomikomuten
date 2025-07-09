@@ -1,0 +1,66 @@
+@charset "utf-8";
+// breakpoint
+$medium: 992px;
+$small: 640px;
+@mixin MQ($media-list...) {
+     @if index($media-list, md){
+        @media screen and (max-width: $medium - 1) {
+             @content;
+        }
+    }
+    @if index($media-list, sm) {
+         @media screen and (max-width: $small - 1){
+            @content;
+        }
+    }
+    @if index($media-list, min-md) {
+         @media screen and (min-width: $medium){
+            @content;
+        }
+    }
+    @if index($media-list, min-sm) {
+         @media screen and (min-width: $small){
+            @content;
+        }
+    }
+}
+// transition
+@mixin transition {
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+
+// font
+$fonts:"游ゴシック Medium", "Yu Gothic Medium", "YuGothic", "游ゴシック", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "sans-serif";
+
+
+
+// font-size:
+$fs-xl: 2.6rem;
+$fs-lg: 1.8rem;
+$fs-md: 1.4rem;
+$fs-sm: 1.1rem;
+$fs-xl: 1.0rem;
+// line-height
+$lh-lg: 2.75;
+$lh-md: 1.78;
+$lh-sm: 1.4;
+$lh-xl: 1.2;
+// letter-spacing
+$ls-lg: 0.06rem;
+$ls-md: 0.015rem;
+$ls-sm: 0.01rem;
+$ls-xs: 0;
+// color
+$color-base: #464646;
+$color-bg: #fff;
+$color-link: #00994b;
+$color-hover: #cccccc;
+$color-border: #00994b;
+// width
+$width-md: 1000px;
+$width-sm: 750px;
+$width-xs: 100px;
+$width-main: 75%;
+$width-side: 20%;

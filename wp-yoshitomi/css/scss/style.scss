@@ -1,0 +1,186 @@
+// compileExpanded: ../../style.css
+@charset "utf-8";
+/*
+Theme Name : 吉富工務店株式会社
+Theme URI: http://yoshitomikomuten.jp
+Author:
+Author URI:
+Description:
+Version: 1.0
+*/
+/*!------------------------------------*\
+    base
+\*!------------------------------------*/
+@import "_setting.scss";
+@import "_reset.scss";
+
+html {
+    font-size: 62.5%;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $fonts;
+    font-size: $fs-md;
+    font-weight: 500;
+    line-height: $lh-md;
+    letter-spacing: 0.01em;
+    color: $color-base;
+    background: $color-bg;
+    position: relative;
+}
+main{
+  display: block;
+}
+a {
+    color: $color-base;
+    text-decoration: none;
+
+}
+
+.container {
+    max-width: $width-md;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.page_container {
+    max-width: $width-sm;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.boxsizing {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.fadebox{
+  opacity: 0;
+}
+
+.pc_only {
+    @include MQ(sm) {
+        display: none;
+    }
+}
+
+.sp_only {
+    @include MQ(min-sm) {
+        display: none;
+    }
+}
+/*!------------------------------------*\
+    header
+\*!------------------------------------*/
+.header {
+    overflow: hidden;
+
+    .header_logo {
+        float: left;
+        margin: 20px auto;
+        width: 185px;
+        @include MQ(sm) {
+            float: none;
+            text-align: center;
+            width: 160px;
+            margin: 15px auto 20px;
+        }
+    }
+}
+/*!------------------------------------*\
+    nav
+\*!------------------------------------*/
+@import "_nav.scss";
+/*!------------------------------------*\
+    page
+\*!------------------------------------*/
+@import "_top.scss";
+@import "_page.scss";
+/*!------------------------------------*\
+    single
+\*!------------------------------------*/
+@import "_single.scss";
+
+/*!------------------------------------*\
+    footer
+\*!------------------------------------*/
+.footer {
+  @include MQ(sm) {
+    text-align: center;
+  }
+    .container {
+        font-size: 1.2rem;
+        letter-spacing: 0.2em;
+        margin: 60px auto 0;
+        padding-bottom: 35px;
+    }
+    .tel{
+      @include MQ(sm) {
+        display: block;
+        margin: 20px 0;
+        border: 1px solid $color-border;
+        a{
+          display: block;
+          padding: 15px 20px;
+        }
+      }
+    }
+    .fax{
+      margin-left: 30px;
+      @include MQ(sm) {
+        display: block;
+        margin-left: 0px;
+
+      }
+    }
+
+
+}
+
+.copyright {
+    text-align: center;
+    padding: 12px;
+    background: $color-border;
+    color: $color-bg;
+    font-size: 1rem;
+}
+
+#page-top {
+    position: fixed;
+    right: 40px;
+    bottom: 50px;
+
+    img {
+        width: 50px;
+    }
+    @include MQ(sm) {
+        background: #fff;
+        right: 10px;
+        bottom: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+
+        img {
+            margin-top: 12px;
+            width: 22px;
+        }
+    }
+}
+/*!------------------------------------*\
+    4040
+\*!------------------------------------*/
+// @import "_4040.scss";

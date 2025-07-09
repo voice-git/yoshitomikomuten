@@ -1,0 +1,75 @@
+@import "_setting.scss";
+
+.single_section {
+  background: #000;
+  padding: 35px 0;
+  color: #fff;
+  @include MQ(sm) {
+    padding: 35px 0 15px;
+  }
+
+  .single_title {
+    font-size: 3rem;
+    margin-bottom: 0.5em;
+  }
+
+  .detail {
+    font-size: 1.3rem;
+  }
+
+  .single_content {
+    overflow: hidden;
+    margin: 30px -3px 0;
+
+    img {
+      padding: 0 3px 6px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+  }
+
+  .img-big {
+    .main_img{
+      img{
+        width: 100%;
+      }
+    }
+    .etc_img{
+      line-height: 0;
+      -webkit-column-count: 2;
+      -webkit-column-gap: 0px;
+      -moz-column-count: 2;
+      -moz-column-gap: 0px;
+      column-count: 2;
+      column-gap: 0px;
+      @include MQ(sm) {
+        -webkit-column-count: 1;
+        -webkit-column-gap: 0px;
+        -moz-column-count: 1;
+        -moz-column-gap: 0px;
+        column-count: 1;
+        column-gap: 0px;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        vertical-align: middle;
+      }
+    }
+
+  }
+
+  .img-small {
+    @include MQ(sm) {
+      text-align: center;
+    }
+
+    img {
+      max-height: 290px;
+      @include MQ(sm) {
+        max-height: 100%;
+      }
+    }
+  }
+}
